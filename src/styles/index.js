@@ -78,7 +78,44 @@ export const Button = styled.button`
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: #FBFBFB;
+  color: #fbfbfb;
 `;
 
-export const Item = styled.li``;
+export const Item = styled.li`
+  padding: 13px 10px 13px 24px;
+  width: 354px;
+  height: 50px;
+  background: ${(props) => (props.checked ? "#da2535" : "#FFFFFF")};
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-direction-line: ${(props) => props.checked ? "line-through" : ""};
+    color: ${(props) => (props.checked ? "#ffffff" : "#000000")};
+  }
+  
+  button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+      opacity: 0.8;
+    }
+    &:active{
+      opacity: 0.6;
+    }
+  }
+
+  i {
+    font-size: 24px;
+    color: ${(props) => (props.checked ? "#ffffff" : "#000000")};
+  }
+`;
